@@ -1,5 +1,9 @@
 # Bayan: Arabic Poetry Treebank for Syntactic Analysis
 
+ <p align="center"> 
+ <img src = "https://raw.githubusercontent.com/droaas/Bayan/main/images/BayanLogo.png" width = "200px"/>
+ </p>
+ 
 ## Overview
 
 **Bayan** is an innovative and fully annotated treebank dedicated to the syntactic analysis of Arabic poetry. This project aims to enhance the understanding of the linguistic structure of classical and modern Arabic poems by providing a rich and detailed syntactic treebank. Whether you're a linguist, a computer scientist, or a poetry enthusiast, Bayan offers a unique platform for exploring the beauty and complexity of Arabic verse.
