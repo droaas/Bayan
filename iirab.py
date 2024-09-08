@@ -4,17 +4,20 @@ from templates import *
 from pyarabic.araby import strip_tashkeel
 from IPython.display import display, HTML
 #######################
-v=pd.read_csv('corpus\\PoemsTreebank.csv',sep='\t',encoding='utf-16')
-pos=pd.read_csv('corpus\\pos.csv',sep='\t',encoding='utf-16')
+v=pd.read_csv('corpus/PoemsTreebank.csv',sep='\t',encoding='utf-16')
+pos=pd.read_csv('corpus/pos.csv',sep='\t',encoding='utf-16')
+pos_ar={pos.pos.iloc[i]:pos.pos_ar.iloc[i] for i in range(len(pos))}
+pos_en={pos.pos_ar.iloc[i]:pos.pos.iloc[i] for i in range(len(pos))}
 ctags={pos.pos_ar.iloc[i]:pos.color.iloc[i] for i in range(len(pos))}
-##############
-rel=pd.read_csv('corpus\\RelLabels.csv',sep='\t',encoding='utf-16')
+#######################
+rel=pd.read_csv('corpus/RelLabels.csv',sep='\t',encoding='utf-16')
+rel_ar={rel.rel_en.iloc[i]:rel.rel_ar.iloc[i] for i in range(len(rel))}
+rel_en={rel.rel_ar.iloc[i]:rel.rel_en.iloc[i] for i in range(len(rel))}
 crel={rel.rel_ar.iloc[i]:rel.rel_color.iloc[i] for i in range(len(rel))}
 #######################
 def get_color(dic, color):
     return dic.get(color, 'blue')
 
-###############################
 def group_phrase_elements(numbers,elements):
     grouped_elements = []
     for current_number in numbers:
